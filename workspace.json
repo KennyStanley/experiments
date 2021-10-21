@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "react-query": "apps/react-query",
+    "react-query-e2e": "apps/react-query-e2e"
+  }
+}

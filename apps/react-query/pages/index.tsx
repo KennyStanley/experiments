@@ -1,21 +1,25 @@
 import { useState } from 'react';
-import Navbar from '../components/navbar/navbar';
-import People from '../components/people/people';
-import Planets from '../components/planets/planets';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+import Container from '../components/ui/container/container';
+import Header from '../components/ui/header/header';
+import Navbar from '../components/ui/navbar/navbar';
+import Planets from '../components/domain/planets/planets';
+import People from '../components/domain/people/people';
+
+const queryClient = new QueryClient();
 
 export function Index() {
   const [page, setPage] = useState('planets');
 
   return (
-    <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 text-center">
-      <h1 className="text-4xl p-4 font-heading text-yellow-300">
-        Star Wars Info
-      </h1>
-      <Navbar setPage={setPage} />
-      <div className="text-left pt-8">
+    <QueryClientProvider client={queryClient}>
+      <Container>
+        <Header />
+        <Navbar setPage={setPage} />
         {page === 'planets' ? <Planets /> : <People />}
-      </div>
-    </div>
+      </Container>
+    </QueryClientProvider>
   );
 }
 

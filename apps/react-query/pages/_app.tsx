@@ -6,9 +6,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to react-query!</title>
+        <title>StarWars App</title>
       </Head>
-      <div className="app">
+      <div className="bg-gray-900 text-white h-screen">
         <main>
           <Component {...pageProps} />
         </main>

@@ -9,11 +9,6 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to react-query!</title>
       </Head>
       <div className="app">
-        <header className="flex">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/nx-logo-white.svg" alt="Nx logo" width="75" height="50" />
-          <h1>Welcome to react-query!</h1>
-        </header>
         <main>
           <Component {...pageProps} />
         </main>

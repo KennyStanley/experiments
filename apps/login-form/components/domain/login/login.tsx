@@ -34,6 +34,12 @@ export function Login(props: LoginProps) {
       {isLoggedIn ? (
         <>
           <h1 className="m-12 text-4xl">Hello {username}</h1>
+          <button
+            onClick={() => setIsLoggedIn(false)}
+            className="m-12 p-2 bg-red-600 text-white"
+          >
+            Log Out
+          </button>
         </>
       ) : (
         <>

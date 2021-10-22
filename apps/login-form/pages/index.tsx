@@ -1,4 +1,4 @@
-import LoginForm from '../components/ui/login-form/login-form';
+import Login from '../components/domain/login/login';
 
 export function Index() {
   /*
@@ -8,7 +8,7 @@ export function Index() {
    */
   return (
     <>
-      <LoginForm onSubmit={() => null} />
+      <Login />
     </>
   );
 }

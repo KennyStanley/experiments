@@ -15,7 +15,11 @@ export function Login(props: LoginProps) {
 
     setIsLoading(true);
 
-    await login({ username, password });
+    try {
+      await login({ username, password });
+    } catch (error) {
+      // do nothing for now
+    }
 
     setIsLoading(false);
   };

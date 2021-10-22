@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "login-form": "apps/login-form",
+    "login-form-e2e": "apps/login-form-e2e",
     "react-query": "apps/react-query",
     "react-query-e2e": "apps/react-query-e2e",
     "shared-utils": "libs/shared/utils"

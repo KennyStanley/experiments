@@ -17,6 +17,9 @@ module.exports = {
         sans: ['Lato', 'sans-serif'],
         heading: ['Oswald', 'sans-serif'],
       },
+      minWidth: {
+        25: '25rem',
+      },
     },
   },
   variants: {

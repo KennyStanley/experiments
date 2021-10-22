@@ -8,7 +8,7 @@ export interface LoginFormProps {
   password: string;
   setPassword: any;
   isLoading: boolean;
-  setIsLoading: any;
+  error: string;
   onSubmit: (e: FormEvent) => Promise<void>;
 }
 
@@ -20,6 +20,9 @@ export function LoginForm(props: LoginFormProps) {
           onSubmit={props.onSubmit}
           className="flex flex-col p-8 gap-4 min-w-25"
         >
+          {props.error && (
+            <p className="text-center text-red-600">{props.error}</p>
+          )}
           <p className="text-center text-2xl">Please Login!</p>
           <input
             type="text"

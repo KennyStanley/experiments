@@ -7,6 +7,8 @@ export interface LoginFormProps {
   setUsername: any;
   password: string;
   setPassword: any;
+  isLoading: boolean;
+  setIsLoading: any;
   onSubmit: (e: FormEvent) => Promise<void>;
 }
 
@@ -34,9 +36,10 @@ export function LoginForm(props: LoginFormProps) {
           />
           <button
             type="submit"
+            disabled={props.isLoading}
             className="p-2 bg-blue-700 hover:bg-blue-500 text-white"
           >
-            Log In
+            {props.isLoading ? 'Logging in...' : 'Log In'}
           </button>
         </form>
       </div>

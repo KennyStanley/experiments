@@ -1,4 +1,5 @@
 import Login from '../components/domain/login/login';
+import { LoginProvider } from '../contexts/loginContext';
 
 export function Index() {
   /*
@@ -8,7 +9,9 @@ export function Index() {
    */
   return (
     <>
-      <Login />
+      <LoginProvider>
+        <Login />
+      </LoginProvider>
     </>
   );
 }

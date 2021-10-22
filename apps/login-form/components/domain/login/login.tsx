@@ -1,17 +1,16 @@
 import { FormEvent, useState, useReducer } from 'react';
 
 import LoginForm from '../../ui/login-form/login-form';
-import Dashboard from '../dashboard/dashboard';
-import { useLoginState } from '../../../hooks/useLoginState';
+import Dashboard from '../../ui/dashboard/dashboard';
 
 import { login } from '@experiments/shared/utils';
+import { useLoginContext } from '../../../contexts/loginContext';
 
 /* eslint-disable-next-line */
 export interface LoginProps {}
 
 export function Login(props: LoginProps) {
-  const [state, dispatch] = useLoginState();
-
+  const [state, dispatch] = useLoginContext();
   const { username, password, isLoggedIn } = state;
 
   const onSubmit = async (e: FormEvent) => {
@@ -29,14 +28,11 @@ export function Login(props: LoginProps) {
     <>
       {isLoggedIn ? (
         <>
-          <Dashboard
-            username={username}
-            logout={() => dispatch({ type: 'logout' })}
-          />
+          <Dashboard />
         </>
       ) : (
         <>
-          <LoginForm state={state} dispatch={dispatch} onSubmit={onSubmit} />
+          <LoginForm onSubmit={onSubmit} />
         </>
       )}
     </>

@@ -14,14 +14,14 @@ export function Planets(props: PlanetsProps) {
   console.log(data);
 
   return (
-    <>
+    <div className="py-4">
       <SubHeading title="Planets" />
       <LoadingState status={status} />
       {status === 'success' &&
         data.results.map((planet) => (
           <Planet planet={planet} key={planet.name} />
         ))}
-    </>
+    </div>
   );
 }
 

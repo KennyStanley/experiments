@@ -8,7 +8,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>StarWars App</title>
       </Head>
-      <div className="bg-gray-900 text-white h-screen">
+      <div className="bg-gray-900 text-white min-h-screen">
         <main>
           <Component {...pageProps} />
         </main>

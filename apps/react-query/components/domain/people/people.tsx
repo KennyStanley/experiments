@@ -12,14 +12,14 @@ export function People(props: PeopleProps) {
   console.log(data);
 
   return (
-    <>
+    <div className="py-4">
       <SubHeading title="People" />
       <LoadingState status={status} />
       {status === 'success' &&
         data.results.map((person) => (
           <Person person={person} key={person.name} />
         ))}
-    </>
+    </div>
   );
 }
 

@@ -4,14 +4,14 @@ import LogoutBtn from '../../ui/logout-btn/logout-btn';
 /* eslint-disable-next-line */
 export interface DashboardProps {
   username: string;
-  setIsLoggedIn: (value: boolean) => void;
+  logout: () => void;
 }
 
 export function Dashboard(props: DashboardProps) {
   return (
     <>
       <Banner username={props.username} />
-      <LogoutBtn setIsLoggedIn={props.setIsLoggedIn} />
+      <LogoutBtn logout={props.logout} />
     </>
   );
 }

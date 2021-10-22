@@ -1,15 +1,16 @@
 import { FormEvent, useState, useReducer } from 'react';
-import LoginForm from '../../ui/login-form/login-form';
-import { login } from '@experiments/shared/utils';
-import Dashboard from '../dashboard/dashboard';
 
-import loginReducer, { initialState } from '../../../reducers/loginReducer';
+import LoginForm from '../../ui/login-form/login-form';
+import Dashboard from '../dashboard/dashboard';
+import { useLoginState } from '../../../hooks/useLoginState';
+
+import { login } from '@experiments/shared/utils';
 
 /* eslint-disable-next-line */
 export interface LoginProps {}
 
 export function Login(props: LoginProps) {
-  const [state, dispatch] = useReducer(loginReducer, initialState);
+  const [state, dispatch] = useLoginState();
 
   const { username, password, isLoggedIn } = state;
 

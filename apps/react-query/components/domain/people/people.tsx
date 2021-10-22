@@ -1,31 +1,25 @@
+import { starWarsApiAdapter } from '@experiments/shared/utils';
 import { useQuery } from 'react-query';
+import LoadingState from '../../ui/loading-state/loading-state';
 import Person from '../../ui/person/person';
-
-const fetchPeople = async () => {
-  const res = await fetch('http://swapi.dev/api/people/');
-  return res.json();
-};
+import SubHeading from '../../ui/sub-heading/sub-heading';
 
 /* eslint-disable-next-line */
 export interface PeopleProps {}
 
 export function People(props: PeopleProps) {
-  const { data, status } = useQuery('people', fetchPeople);
+  const { data, status } = useQuery('people', starWarsApiAdapter.fetchPeople);
   console.log(data);
 
   return (
-    <div>
-      <h1 className="text-2xl pb-2 font-bold font-heading">People</h1>
-      {status === 'error' && <div>Error fetching data</div>}
-      {status === 'loading' && <div>Loading data...</div>}
-      {status === 'success' && (
-        <div>
-          {data.results.map((person) => (
-            <Person person={person} key={person.name} />
-          ))}
-        </div>
-      )}
-    </div>
+    <>
+      <SubHeading title="People" />
+      <LoadingState status={status} />
+      {status === 'success' &&
+        data.results.map((person) => (
+          <Person person={person} key={person.name} />
+        ))}
+    </>
   );
 }
 

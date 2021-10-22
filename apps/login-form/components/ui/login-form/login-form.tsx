@@ -1,5 +1,5 @@
 import { FormEvent } from 'react';
-import { initialState } from '../../domain/login/login';
+import { initialState } from '../../../reducers/loginReducer';
 import './login-form.module.css';
 
 /* eslint-disable-next-line */

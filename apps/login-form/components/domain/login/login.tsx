@@ -10,14 +10,18 @@ export function Login(props: LoginProps) {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     setIsLoading(true);
 
+    setError('');
+
     try {
       await login({ username, password });
+      setIsLoggedIn(true);
     } catch (error) {
       setError('Incorrect username or password');
     }
@@ -27,15 +31,23 @@ export function Login(props: LoginProps) {
 
   return (
     <>
-      <LoginForm
-        username={username}
-        setUsername={setUsername}
-        password={password}
-        setPassword={setPassword}
-        isLoading={isLoading}
-        error={error}
-        onSubmit={onSubmit}
-      />
+      {isLoggedIn ? (
+        <>
+          <h1 className="m-12 text-4xl">Hello {username}</h1>
+        </>
+      ) : (
+        <>
+          <LoginForm
+            username={username}
+            setUsername={setUsername}
+            password={password}
+            setPassword={setPassword}
+            isLoading={isLoading}
+            error={error}
+            onSubmit={onSubmit}
+          />
+        </>
+      )}
     </>
   );
 }

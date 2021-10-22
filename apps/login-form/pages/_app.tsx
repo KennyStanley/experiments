@@ -6,14 +6,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to login-form!</title>
+        <title>Recoil Login Form</title>
       </Head>
-      <div className="app">
-        <header className="flex">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/nx-logo-white.svg" alt="Nx logo" width="75" height="50" />
-          <h1>Welcome to login-form!</h1>
-        </header>
+      <div className="">
         <main>
           <Component {...pageProps} />
         </main>

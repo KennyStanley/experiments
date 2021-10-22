@@ -16,8 +16,6 @@ export function loginReducer(state, action) {
                 ...state,
                 isLoading: false,
                 isLoggedIn: true,
-                username: '',
-                password: '',
                 error: '',
             };
         case 'error':

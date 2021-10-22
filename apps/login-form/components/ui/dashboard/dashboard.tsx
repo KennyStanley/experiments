@@ -5,7 +5,6 @@ export interface DashboardProps {}
 
 export function Dashboard(props: DashboardProps) {
   const [state, dispatch] = useLoginContext();
-  console.log(state);
 
   return (
     <>
